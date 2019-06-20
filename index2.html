@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<title>Gopel Topics</title>
+
+
+<meta name="author" content="Dallin Stephens" />
+
+
+<meta name="viewport" content="width=1220" />
+
+
+<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+
+<script src="jquery-3.0.0.min.js">
+
+</script>
+
+<!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "linear", "swing" or "easeInOutCubic". -->
+
+<script src="vendors/jquery.easings.min.js"></script>
+
+<!-- This following line is only necessary in the case of using the plugin option `scrollOverflow:true` -->
+
+
+<script type="text/javascript" src="vendors/scrolloverflow.min.js"></script>
+
+
+
+<script type="text/javascript" src="jquery.fullPage.js"></script>
+
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function() {
+
+
+	$('#fullpage').fullpage({
+
+		menu: '#myMenu',
+		// Section Colors: blue, green, orange, red
+		sectionsColor: ['rgba(5, 80, 223, 0.2)', 'rgba(5, 138, 72, 0.3)', 'rgba(255, 83, 0, 0.4)', 'rgba(215, 0, 22, 0.4)'],
+		anchors: ['Home', 'SectionA', 'SectionB', 'SectionC'],
+       		css3: true,
+
+		verticalCentered: true,
+  		loopTop: true,
+  		loopBottom: true,
+		slidesNavigation: true
+	});
+
+});
+
+
+$(document).ready(function(){
+	$("#autohide").click(function(){
+
+		if ($("#autohide").is(':checked')) {
+            		$("#myMenu").mouseleave(function(){$("#hideShowMenu").hide();});
+    			$("#myMenu").mouseenter(function(){$("#hideShowMenu").show();});
+		}
+		else {$("#myMenu").unbind();}
+	});
+
+
+// Slide home panel down or up
+
+    $("#home_button").click(function(){
+        $("#home_panel").slideToggle("slow");
+    });
+
+// Hide or show the topic
+    $("#A_Slide1_VideoContainer").click(function(){
+        $("#A_Slide1_Topic").toggle();
+    });
+    $("#A_Slide2_VideoContainer").click(function(){
+        $("#A_Slide2_Topic").toggle();
+    });
+    $("#A_Slide3_VideoContainer").click(function(){
+        $("#A_Slide3_Topic").toggle();
+    });
+
+    $("#B_Slide1_VideoContainer").click(function(){
+        $("#B_Slide1_Topic").toggle();
+    });
+    $("#B_Slide2_VideoContainer").click(function(){
+        $("#B_Slide2_Topic").toggle();
+    });
+    $("#B_Slide3_VideoContainer").click(function(){
+        $("#B_Slide3_Topic").toggle();
+    });
+
+    $("#C_Slide1_VideoContainer").click(function(){
+        $("#C_Slide1_Topic").toggle();
+    });
+    $("#C_Slide2_VideoContainer").click(function(){
+        $("#C_Slide2_Topic").toggle();
+    });
+    $("#C_Slide3_VideoContainer").click(function(){
+        $("#C_Slide3_Topic").toggle();
+    });
+
+});
+
+</script>
+
+
+
+<style>
+
+#myMenu {position:fixed; top:5px; left:5px; z-index:2; height:50px; width:100%;}
+
+
+
+/* Backgrounds will cover all the section */
+
+
+.section {
+
+	background-size: cover;
+	text-align: center;
+        font-size: 6em;
+        color: white;
+}
+
+
+.slide{background-size: cover;
+}
+
+
+
+/* Defining each section background and styles */
+
+
+#home {
+	/* tinted blue color over background image */
+	box-shadow: inset 0 0 0 1000px rgba(5, 80, 223, 0.2);
+	background-image: url(images/scriptures0.jpg);
+
+}
+
+#sectionA {
+	/* tinted green color over background image */
+	box-shadow: inset 0 0 0 1000px rgba(5, 138, 72, 0.3);
+	background-image: url(images/scriptures1.jpg);
+	background-position: 50% 35%;
+}
+
+#sectionB {
+	/* tinted orange color over background image */
+	box-shadow: inset 0 0 0 1000px rgba(255, 83, 0, 0.4);
+	background-image: url(images/scriptures2.jpg);
+	background-position: 10% 50%;
+}
+
+#sectionC {
+	/* tinted red color over background image */
+	box-shadow: inset 0 0 0 1000px rgba(215, 0, 22, 0.4);
+	background-image: url(images/scriptures3.jpg);
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #808080;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+}
+
+.button1:hover {
+    background-color: #00ff00; /* Lime Green */
+    color: black;
+}
+
+hr {    position:relative;
+        top:5px;
+	width:320%;
+	border-width: 1px;
+}
+
+/* The is for an on and off switch for auto-hide and lock navigation */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3.5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #00ff00; /* Lime Green */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00ff00; /* Lime Green */
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* The is for styling for the images */
+
+.A_ImageStyling {position:relative; display:inline-block; *display: inline; top:3px; left:0px; margin-left:-22px; color:#008060; width:140px;}
+
+.A_ImageStyling:hover {color:#00ff00;}
+
+.B_ImageStyling {position:relative; display:inline-block; *display: inline; top:3px; left:0px; margin-left:-22px; color:#ff944d; width:140px;}
+
+.B_ImageStyling:hover {color:#00ff00;}
+
+.C_ImageStyling {position:relative; display:inline-block; *display: inline; top:3px; left:0px; margin-left:-22px; color:#ff6666; width:140px;}
+
+.C_ImageStyling:hover {color:#00ff00;}
+
+/* The is for creating a transparent film that pops up with a text description when hovering over a small image. */
+
+.film {position:absolute; top:77%; left:3.1%; width:700px; background-color: #000000; background: rgba(21, 21, 21, 0.5); z-index:3;}
+
+.textinmiddle {height:82px; display: table-cell; vertical-align: middle;}
+
+.small {line-height:10%; z-index:5;}
+
+p.top {font-size:100%; line-height:0%; margin-top:1%; text-align: center;}
+
+p.middle {font-size:65%; font-style: italic; margin:0em; text-align: center;}
+
+/* The is for styling for links. */
+
+.links:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.links:hover {
+    color: #00ff00;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+/* This is styling of the home panel. */
+#home_panel {
+	position:fixed;
+	display:none;
+	top:45px;
+	left:2px;
+	background:rgba(21, 21, 21, 0.5);
+	border: solid 1px #808080;
+	text-align:center;
+	width:5.6%;
+	padding-top:5px;
+	padding-bottom:5px;
+	z-index:4;
+}
+
+
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+
+<div id="myMenu">
+
+<div id="hideShowMenu">
+<a style="font-size:20px;">
+	<button id="home_button" data-menuanchor="Home" class="active button button1" type="button" onclick="window.location.href='#Home'">&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</button>
+
+
+		<div id="home_panel">
+			<a class="links" href="http://www.w3schools.com/html/">Slide 1</a><br>
+			<a class="links" href="http://www.w3schools.com/html/">Slide 2</a><br>
+			<a class="links" href="http://www.w3schools.com/html/">Slide 3</a>
+		</div>
+
+	<button id="SectionA_Button" data-menuanchor="SectionA" class="button button1" type="button" onclick="window.location.href='#SectionA'">Section A</button>
+
+	<button data-menuanchor="SectionB" class="button button1" type="button" onclick="window.location.href='#SectionB'">Section B</button>
+
+	<button data-menuanchor="SectionC" class="button button1" type="button" onclick="window.location.href='#SectionC'">Section C</button>
+</a>
+<div style="position:fixed; top:2%; width:10%; left:50%; margin-left:-5%; color:white; font-size:20px">&nbsp;&nbsp;NAVIGATION</div>
+
+<div style="position:fixed; right:100px; width:15%; top:2%">
+
+	<label class="switch">
+  		<input id="autohide" type="checkbox" value="auto-hide" name="toolbar">
+  		<div class="slider round"></div>
+	</label>
+	<a style="position:relative; top:-8px; font-size:20px; color:white">&nbsp;Auto-Hide</a>
+</div>
+
+<div id="horizontalLine" style="position:fixed; top:7.4%; background-color:#808080; height:1px; width:100%"></div>
+
+</div>
+
+</div>
+
+
+
+<div id="fullpage">
+
+	<div class="section">
+		<div class="slide" id="Home">
+
+      Hi
+
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="slide" id="sectionA">Section A</div>
+
+		<!-- Section A Slide 1 -->
+		<div class="slide" id="A.Slide1">
+			Section A Slide 1
+		</div>
+
+		<!-- Section A Slide 2 -->
+		<div class="slide" id="A.Slide2">
+			Section A Slide 2
+		</div>
+
+		<!-- Section A Slide 3 -->
+		<div class="slide" id="A.Slide3">
+			Section A Slide 3
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="slide" id="sectionB">Section B</div>
+
+		<!-- Section B Slide 1 -->
+		<div class="slide" id="B.Slide1">
+			Section B Slide 1
+		</div>
+
+		<!-- Section B Slide 2 -->
+		<div class="slide" id="B.Slide2">
+			Section B Slide 2
+		</div>
+
+		<!-- Section B Slide 3 -->
+		<div class="slide" id="B.Slide3">
+			Section B Slide 3
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="slide" id="sectionC">Section C</div>
+
+		<!-- Section C Slide 1 -->
+		<div class="slide" id="C.Slide1">
+			Section C Slide 1
+		</div>
+
+		<!-- Section C Slide 2 -->
+		<div class="slide" id="C.Slide2">
+			Section C Slide 2
+		</div>
+
+		<!-- Section C Slide 3 -->
+		<div class="slide" id="C.Slide3">
+			Section C Slide 3
+		</div>
+	</div>
+
+</div>
+
+<script>
+
+var i;
+
+// Section A Slide 1
+
+var A_Slide1_Video=["e1ar9gjIrEQ", "2nPY22FoDpY", "kbNnlQjwZb0", "dcocqyISHuA", "YvZsOTJEUUc", "gAhAVBtGhy8", "NZhjRLuV_4I"];
+
+function A_Slide1_PlayVideo(a) {
+        i=a;
+
+	var A_Slide1_VideoCode = '<iframe width="700px" height="393px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" type="application/x-shockwave-flash" src="https://www.youtube.com/embed/'+A_Slide1_Video[i]+'?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&vq=720p&rel=0"></iframe>';
+
+	document.getElementById('A_Slide1_ShowVideo').innerHTML = A_Slide1_VideoCode;
+	document.getElementById('A_Slide1_ChangeText').innerHTML='';
+
+}
+
+var A_Slide1_Explain = ["<div class='textinmiddle'><a class = 'small'><p class = 'top'>Abide in Me</p><p class = 'middle'>Music Video</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Lord, I Believe</p><p class = 'middle'>Elder Jeffrey R. Holland</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>I Will Not Fail Thee, nor Forsake Thee</p><p class = 'middle'>President Thomas S. Monson</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Put Your Trust in the Lord</p><p class = 'middle'>Elder M. Russell Ballard</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Abide with Me</p><p class = 'middle'>Mormon Tabernacle Choir</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Abide with Me Tis Eventide</p><p class = 'middle'>Mormon Tabernacle Choir</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>We Never Walk Alone</p><p class = 'middle'>President Thomas S. Monson</p></a></div>"];
+
+// Section A Slide 2
+
+var A_Slide2_Video=["Rr8xvw0cgw0", "zbd6N_cBFtw", "xdN8rfwW3SI", "-DIIgm6xABQ", "wz41YxNiHEg", "y22ItxCz0_k", "2w49_1a9X0Q"];
+
+function A_Slide2_PlayVideo(a) {
+        i=a;
+
+	var A_Slide2_VideoCode = '<iframe width="700px" height="393px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" type="application/x-shockwave-flash" src="https://www.youtube.com/embed/'+A_Slide2_Video[i]+'?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&vq=720p&rel=0"></iframe>';
+
+	document.getElementById('A_Slide2_ShowVideo').innerHTML = A_Slide2_VideoCode;
+	document.getElementById('A_Slide2_ChangeText').innerHTML='';
+
+}
+
+var A_Slide2_Explain = ["<div class='textinmiddle'><a class = 'small'><p class = 'top'>The Will of God</p><p class = 'middle'>Elder D. Todd Christofferson</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Comfort in Trials</p><p class = 'middle'>Mormon Channel</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Mountains to Climb</p><p class = 'middle'>President Henry B. Eyring</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>The Refiner's Fire</p><p class = 'middle'>Kim Martin</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Hope Ya Know, We Had a Hard Time</p><p class = 'middle'>Elder Quentin L. Cook</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Trials: Look to the Light</p><p class = 'middle'>Elder Jeffrey R. Holland</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>The Hope of God's Light</p><p class = 'middle'>Todd Sylvester</p></a></div>"];
+
+// Section A Slide 3
+
+var A_Slide3_Video=["_S3TI4bYerU", "jOmER8WB15U", "goR5FO1vge8", "z0APKNvDMr4", "RqmeyQUY-xM", "mha9nKaPHjU", "NYC79jaYEis"];
+
+function A_Slide3_PlayVideo(a) {
+        i=a;
+
+	var A_Slide3_VideoCode = '<iframe width="700px" height="393px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" type="application/x-shockwave-flash" src="https://www.youtube.com/embed/'+A_Slide3_Video[i]+'?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&vq=720p&rel=0"></iframe>';
+
+	document.getElementById('A_Slide3_ShowVideo').innerHTML = A_Slide3_VideoCode;
+	document.getElementById('A_Slide3_ChangeText').innerHTML='';
+
+}
+
+var A_Slide3_Explain = ["<div class='textinmiddle'><a class = 'small'><p class = 'top'>Because of Him</p><p class = 'middle'>Music Video</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Stengthened by the Atonement</p><p class = 'middle'>Elder Dallin H. Oaks</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>The Savior Suffers in Gethsemane</p><p class = 'middle'>BibleVideos.org</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Jesus is Risen</p><p class = 'middle'>New Testament Stories</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Jesus Is Resurrected</p><p class = 'middle'>BibleVideo.org</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>The Lamb of God</p><p class = 'middle'>Church Movie</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Jesus Suffers in the Garden of Gethsemane</p><p class = 'middle'>New Testament Stories</p></a></div>"];
+
+// Section B Slide 1
+
+var B_Slide1_Video=["WNLYeTxBQiY", "9_dr9njVzKM", "EjIlhu-yuTI", "UJ2LYnO2ssw", "QvHNknXXN4A", "kZpsZBNDJJA", "AoG8ZxboP0I"];
+
+function B_Slide1_PlayVideo(a) {
+        i=a;
+
+	var B_Slide1_VideoCode = '<iframe width="700px" height="393px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" type="application/x-shockwave-flash" src="https://www.youtube.com/embed/'+B_Slide1_Video[i]+'?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&vq=720p&rel=0"></iframe>';
+
+	document.getElementById('B_Slide1_ShowVideo').innerHTML = B_Slide1_VideoCode;
+	document.getElementById('B_Slide1_ChangeText').innerHTML='';
+
+}
+
+var B_Slide1_Explain = ["<div class='textinmiddle'><a class = 'small'><p class = 'top'>Power of God</p><p class = 'middle'>President Thomas S. Monson</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Jesus is Baptized by John</p><p class = 'middle'>BibleVideos.org</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Jesus Teaches of Being Born Again</p><p class = 'middle'>BibleVideos.org</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>One Lord, One Faith, One Baptism</p><p class = 'middle'>Elder LeGrand Richards</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>The Covenant of Baptism</p><p class = 'middle'>Elder Robert D. Hales</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Keeping the Covenants We Make at Baptism</p><p class = 'middle'>Sister Dwan J. Young</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Jesus Is Baptized</p><p class = 'middle'>New Testament Stories</p></a></div>"];
+
+// Section B Slide 2
+
+var B_Slide2_Video=["20UoMqdDPCU", "2nPY22FoDpY", "gN-BU2im_vM", "9MiF_HKoFr4", "1T0pdu3qQ-k", "GcXULnc5aOI", "oe3johHSDEo"];
+
+function B_Slide2_PlayVideo(a) {
+        i=a;
+
+	var B_Slide2_VideoCode = '<iframe width="700px" height="393px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" type="application/x-shockwave-flash" src="https://www.youtube.com/embed/'+B_Slide2_Video[i]+'?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&vq=720p&rel=0"></iframe>';
+
+	document.getElementById('B_Slide2_ShowVideo').innerHTML = B_Slide2_VideoCode;
+	document.getElementById('B_Slide2_ChangeText').innerHTML='';
+
+}
+
+var B_Slide2_Explain = ["<div class='textinmiddle'><a class = 'small'><p class = 'top'>I Believe in Christ</p><p class = 'middle'>Mormon Tabernacle Choir</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Lord, I Believe</p><p class = 'middle'>Elder Jeffrey R. Holland</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Believe, Obey, Endure</p><p class = 'middle'>President Thomas S. Monson</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>What Do Mormons Believe?</p><p class = 'middle'>Mormon Channel</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Elisabeth and Zacharias</p><p class = 'middle'>New Testament Stories</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Do I Believe?</p><p class = 'middle'>Sister Bonnie L. Oscarson</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Choose to Believe</p><p class = 'middle'>Elder L. Whitney Clayton</p></a></div>"];
+
+// Section B Slide 3
+
+var B_Slide3_Video=["FMQEb9A9L2g", "CkKblIMfmjI", "3dNYpXZIN_c", "z9cVyTbX1kM", "-35gtKuWrD4", "TN1Ez7MjvBU", "MHPTqPRY_vc"];
+
+function B_Slide3_PlayVideo(a) {
+        i=a;
+
+	var B_Slide3_VideoCode = '<iframe width="700px" height="393px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" type="application/x-shockwave-flash" src="https://www.youtube.com/embed/'+B_Slide3_Video[i]+'?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&vq=720p&rel=0"></iframe>';
+
+	document.getElementById('B_Slide3_ShowVideo').innerHTML = B_Slide3_VideoCode;
+	document.getElementById('B_Slide3_ChangeText').innerHTML='';
+
+}
+
+var B_Slide3_Explain = ["<div class='textinmiddle'><a class = 'small'><p class = 'top'>How We Got The Book Of Mormon</p><p class = 'middle'>Mormon Channel</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Testimony of the Book of Mormon</p><p class = 'middle'>Elder Jeffrey R. Holland</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>A Book of Mormon Story</p><p class = 'middle'>A Young Bishop in England</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>A Book with a Promise</p><p class = 'middle'>Elder Craig C. Christensen</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Book of Mormon: An Introduction</p><p class = 'middle'>Elder Jeffrey R. Holland</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>The Book of Mormon Is the Word of God</p><p class = 'middle'>President Ezra Taft Benson</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>What Think Ye of the Book of Mormon?</p><p class = 'middle'>Elder Bruce R. McConkie</p></a></div>"];
+
+// Section C Slide 1
+
+var C_Slide1_Video=["qBIEYAfoEz0", "05nA0cNEEqk", "cp3IH8ZNviQ", "XX8PVHTj-vc", "X5YWbdSEwYo", "0djRbZN1U8M", "53dQvI1e-7I"];
+
+function C_Slide1_PlayVideo(a) {
+        i=a;
+
+	var C_Slide1_VideoCode = '<iframe width="700px" height="393px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" type="application/x-shockwave-flash" src="https://www.youtube.com/embed/'+C_Slide1_Video[i]+'?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&vq=720p&rel=0"></iframe>';
+
+	document.getElementById('C_Slide1_ShowVideo').innerHTML = C_Slide1_VideoCode;
+	document.getElementById('C_Slide1_ChangeText').innerHTML='';
+
+}
+
+var C_Slide1_Explain = ["<div class='textinmiddle'><a class = 'small'><p class = 'top'>Charity Never Faileth</p><p class = 'middle'>BibleVideos.org</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>For God So Loved the World</p><p class = 'middle'>BibleVideos.org</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>The Coat: A Story of Charity</p><p class = 'middle'>Mormon Channel</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>What is Charity?</p><p class = 'middle'>Sister Julie B. Beck</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Charity Never Faileth</p><p class = 'middle'>President Thomas S. Monson</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Endure to the End in Charity</p><p class = 'middle'>Elder Hartman Rector Jr.</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Strengthened in Charity</p><p class = 'middle'>Sister Elaine L. Jack</p></a></div>"];
+
+// Section C Slide 2
+
+var C_Slide2_Video=["nNzTTdD33Vg", "db-lE_f2U5I", "3--thiRbM_I", "n-nYIHjsogg", "CBWuwIcxvaI", "RfV2TlYO20A", "T8mlJnd3nOA"];
+
+function C_Slide2_PlayVideo(a) {
+        i=a;
+
+	var C_Slide2_VideoCode = '<iframe width="700px" height="393px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" type="application/x-shockwave-flash" src="https://www.youtube.com/embed/'+C_Slide2_Video[i]+'?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&vq=720p&rel=0"></iframe>';
+
+	document.getElementById('C_Slide2_ShowVideo').innerHTML = C_Slide2_VideoCode;
+	document.getElementById('C_Slide2_ChangeText').innerHTML='';
+
+}
+
+var C_Slide2_Explain = ["<div class='textinmiddle'><a class = 'small'><p class = 'top'>Obedience to The Ten Commandments</p><p class = 'middle'>Elder L. Tom Perry</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>The Greatest Commandment</p><p class = 'middle'>BibleVideos.org</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Keep the Commandments</p><p class = 'middle'>Mormon Tabernacle Choir</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Keep the Commandments</p><p class = 'middle'>President Thomas S. Monson</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Blessed and Happy...</p><p class = 'middle'>Elder Von G. Keetch</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>If Ye Love Me, Keep My Commandments</p><p class = 'middle'>Sister Carole M. Stephens</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>If Ye Love Me, Keep My Commandments</p><p class = 'middle'>Elder Robert D. Hales</p></a></div>"];
+
+// Section C Slide 3
+
+var C_Slide3_Video=["kGR2guh4qVQ", "1nN0DxwuE4s", "ocmAPjyxm2g", "xzdeX9h-HVQ", "8pk5QTCZWUs", "X1koBjr-eXQ", "_-oiqGtGI90"];
+
+function C_Slide3_PlayVideo(a) {
+        i=a;
+
+	var C_Slide3_VideoCode = '<iframe width="700px" height="393px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" type="application/x-shockwave-flash" src="https://www.youtube.com/embed/'+C_Slide3_Video[i]+'?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&vq=720p&rel=0"></iframe>';
+
+	document.getElementById('C_Slide3_ShowVideo').innerHTML = C_Slide3_VideoCode;
+	document.getElementById('C_Slide3_ChangeText').innerHTML='';
+
+}
+
+var C_Slide3_Explain = ["<div class='textinmiddle'><a class = 'small'><p class = 'top'>About Covenants</p><p class = 'middle'>Elder Russell M. Nelson</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Claim the Blessings of Your Covenants</p><p class = 'middle'>Sister Linda S. Reeves</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Cleave unto the Covenants</p><p class = 'middle'>Sister Barbara Thompson</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>The Abrahamic Covenant</p><p class = 'middle'>One Family Shows Love</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Covenants</p><p class = 'middle'>Elder Boyd K. Packer</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>Keeping Covenants</p><p class = 'middle'>Elder M. Russell Ballard</p></a></div>", "<div class='textinmiddle'><a class = 'small'><p class = 'top'>The Power of Covenants</p><p class = 'middle'>Elder D. Todd Christofferson</p></a></div>"];
+
+</script>
+
+</body>
+
+
+</html>
